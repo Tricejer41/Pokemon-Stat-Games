@@ -32,7 +32,7 @@ function getRandomInt(max) {
 
 function getRandomPokemon() {
     const pokemon = [];
-    while (pokemon.length < 10) {
+    while (pokemon.length < 8) { // Cambiamos de 10 a 8
         const randomIndex = getRandomInt(allPokemon.length);
         const selected = allPokemon[randomIndex];
         if (!pokemon.includes(selected)) {
@@ -77,7 +77,7 @@ function startRace() {
         // Calcular la duración basada en el valor de la estadística (estadística más alta, duración más corta)
         const duration = (100 / stat) * 2; // 2 segundos para llenar el 100% para el valor de estadística de 100
 
-        bar.style.transition = `width ${duration}s`;
+        bar.style.transition = `width ${duration}s linear`;
         bar.style.width = '100%';
 
         setTimeout(() => {

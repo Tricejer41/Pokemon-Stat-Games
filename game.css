@@ -3,46 +3,70 @@ body {
     color: #260101;
     font-family: 'Arial', sans-serif;
     text-align: center;
+    overflow: hidden; /* Para evitar barras laterales */
+    margin: 0; /* Eliminar márgenes del body */
 }
 .stat-header {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 20px auto;
+    justify-content: center;
+    width: 100%;
+    margin: 5px auto; /* Reducimos el margen */
 }
 .pokemon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 5px auto; /* Reducimos el margen */
+    width: 100%; /* Aumentamos el ancho */
 }
 .pokemon {
     display: flex;
     align-items: center;
-    margin: 10px 0;
-    width: 80%;
+    justify-content: center;
+    margin: 5px 0; /* Reducimos el margen */
+    width: 100%; /* Aumentamos el ancho */
 }
 .pokemon-sprite {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 80px; /* Aumentamos el tamaño de la imagen */
+    height: 80px; /* Aumentamos el tamaño de la imagen */
+    margin-right: 10px; /* Reducimos el margen */
 }
 .stat-bar-container {
     position: relative;
-    width: 60%;
+    width: 50%; /* Reducimos la longitud de las barras */
     background-color: #D9A7A4;
     border: 2px solid #D98B91;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Alineación a la izquierda */
 }
 .stat-bar {
-    height: 30px;
+    height: 30px; /* Aumentamos la altura de las barras */
     width: 0;
     background-color: #F2E5D5;
-    transition: width 2s;
+    transition: width 2s linear;
+    box-sizing: border-box; /* Aseguramos que el padding y border se incluyan en el tamaño total */
 }
 .stat-value {
     margin-left: 10px;
     color: #400101;
     font-weight: bold;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* Reducimos el margen */
+}
+button {
+    padding: 5px 10px; /* Reducimos el tamaño del botón */
+    font-size: 14px; /* Reducimos el tamaño de la fuente */
+    margin: 5px; /* Reducimos el margen */
+    background-color: #F2E5D5;
+    border: 2px solid #D98B91;
+    color: #260101;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #D98B91;
+    color: #F2E5D5;
 }
