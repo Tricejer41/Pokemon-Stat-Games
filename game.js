@@ -3,7 +3,7 @@ const statsList = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed'
 let currentPokemon = [];
 let selectedStat = 'speed';
 let currentRound = 1;
-const totalRounds = 5;
+const totalRounds = parseInt(localStorage.getItem('rounds')) || 5;
 let score = 0;
 
 function getRandomInt(max) {

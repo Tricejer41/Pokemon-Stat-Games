@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Stat Race - Inicio</title>
+    <title>Pokémon Stat Race</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bienvenido a Pokémon Stat Race</h1>
-    <button onclick="startGame()">Comenzar Juego</button>
-
+    <div class="container">
+        <h1>Pokémon Stat Race</h1>
+        <div class="description">
+            <p>Bienvenido al Pokémon Stat Race! Elige 8 Pokémon y compite para ver cuál tiene la mejor estadística seleccionada. Predice cuál será el Pokémon con la mejor y peor estadística. Gana puntos si tus predicciones son correctas: 3 puntos si ambas predicciones son correctas y 1 punto si solo una es correcta. ¡Diviértete!</p>
+        </div>
+        <div class="round-selection">
+            <label for="rounds">Selecciona el número de rondas:</label>
+            <select id="rounds">
+                <option value="1">1</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button onclick="startGame()">Start Game</button>
+        </div>
+    </div>
     <script>
         function startGame() {
+            const rounds = document.getElementById('rounds').value;
+            localStorage.setItem('rounds', rounds);
             window.location.href = 'game.html';
         }
     </script>
