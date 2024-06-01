@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Stat Race - Fin del Juego</title>
+    <title>Pokémon Stat Race - Resultados</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Fin del Juego</h1>
-    <div id="results">
-        <!-- Aquí se mostrarán los resultados -->
+    <div class="container">
+        <h1>Resultados Finales</h1>
+        <div class="description">
+            <p id="final-score">Tu puntuación final es: <span id="score">0</span></p>
+        </div>
+        <div class="button-container">
+            <button onclick="startNewGame()">Jugar de Nuevo</button>
+        </div>
     </div>
-    <button onclick="goToHome()">Volver al Inicio</button>
-
     <script>
-        function goToHome() {
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const finalScore = localStorage.getItem('finalScore') || 0;
+            document.getElementById('score').textContent = finalScore;
+        });
+
+        function startNewGame() {
             window.location.href = 'index.html';
         }
     </script>

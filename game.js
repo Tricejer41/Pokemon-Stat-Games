@@ -152,6 +152,7 @@ async function nextRound() {
         document.getElementById('start-button').disabled = false;
         await resetRace();
     } else {
+        localStorage.setItem('finalScore', score);
         window.location.href = 'end.html';
     }
 }
