@@ -4,22 +4,6 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
 }
-h1 {
-    margin-top: 20px;
-}
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
-    background-color: #F2E5D5;
-    border: 2px solid #D98B91;
-    color: #260101;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #D98B91;
-    color: #F2E5D5;
-}
 .stat-header {
     display: flex;
     justify-content: space-between;
