@@ -1,0 +1,48 @@
+body {
+    background-color: #D9CBBA;
+    color: #260101;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px auto;
+}
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.pokemon {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 80%;
+}
+.pokemon-sprite {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.stat-bar-container {
+    position: relative;
+    width: 60%;
+    background-color: #D9A7A4;
+    border: 2px solid #D98B91;
+    display: flex;
+    align-items: center;
+}
+.stat-bar {
+    height: 30px;
+    width: 0;
+    background-color: #F2E5D5;
+    transition: width 2s;
+}
+.stat-value {
+    margin-left: 10px;
+    color: #400101;
+    font-weight: bold;
+}
