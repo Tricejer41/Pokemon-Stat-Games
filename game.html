@@ -11,10 +11,22 @@
     <h1>Pokémon Stat Race</h1>
     <div class="stat-header">
         <div id="selected-stat">Stat: Speed</div>
+        <div id="score">Puntuación: 0</div>
         <div id="round-indicator">Ronda: 1/5</div>
     </div>
     <div class="pokemon-container" id="pokemon-container">
         <!-- Contenedor para los Pokémon -->
+    </div>
+    <div class="predictions">
+        <label for="first-prediction">Predicción Primer Lugar:</label>
+        <select id="first-prediction">
+            <option value="" disabled selected>Seleccionar Pokémon</option>
+        </select>
+
+        <label for="last-prediction">Predicción Último Lugar:</label>
+        <select id="last-prediction">
+            <option value="" disabled selected>Seleccionar Pokémon</option>
+        </select>
     </div>
     <div class="button-container">
         <button id="start-button" onclick="startRace()">Start Race</button>

@@ -9,6 +9,7 @@ body {
 .stat-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     margin: 5px auto; /* Reducimos el margen */
 }
@@ -69,4 +70,25 @@ button {
 button:hover {
     background-color: #D98B91;
     color: #F2E5D5;
+}
+.predictions {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+.predictions label {
+    margin-right: 10px;
+}
+.predictions select {
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 14px;
+}
+.score-container {
+    margin-top: 10px;
+}
+#score {
+    font-size: 18px;
+    font-weight: bold;
 }
