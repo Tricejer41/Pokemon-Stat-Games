@@ -1,15 +1,14 @@
 const maxPokemonID = 1025;
 const statsList = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed'];
-
-let selectedStat = 'speed';
 let currentPokemon = [];
+let selectedStat = 'speed';
+let currentRound = 1;
+const totalRounds = 5;
 
-// Función para obtener un entero aleatorio
 function getRandomInt(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
-// Función para obtener los datos de los Pokémon desde la API
 async function getPokemonData(pokemonID) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`);
     const data = await response.json();
@@ -27,7 +26,6 @@ async function getPokemonData(pokemonID) {
     };
 }
 
-// Función para obtener 8 Pokémon aleatorios
 async function getRandomPokemon() {
     const pokemonSet = new Set();
     while (pokemonSet.size < 8) {
@@ -40,18 +38,20 @@ async function getRandomPokemon() {
     return pokemonData;
 }
 
-// Función para obtener una estadística aleatoria
 function getRandomStat() {
     return statsList[getRandomInt(statsList.length) - 1];
 }
 
-// Función para actualizar la estadística seleccionada en la interfaz
 function updateSelectedStat() {
     const selectedStatElement = document.getElementById('selected-stat');
     selectedStatElement.textContent = `Stat: ${selectedStat.charAt(0).toUpperCase() + selectedStat.slice(1)}`;
 }
 
-// Función para renderizar los Pokémon en la interfaz
+function updateRoundIndicator() {
+    const roundIndicator = document.getElementById('round-indicator');
+    roundIndicator.textContent = `Ronda: ${currentRound}/${totalRounds}`;
+}
+
 function renderPokemon() {
     const container = document.getElementById('pokemon-container');
     container.innerHTML = '';
@@ -69,30 +69,41 @@ function renderPokemon() {
     });
 }
 
-// Función para iniciar la carrera
 function startRace() {
     currentPokemon.forEach(pokemon => {
         const bar = document.getElementById(`${pokemon.name}-bar`);
         const value = document.getElementById(`${pokemon.name}-value`);
         const stat = pokemon.stats[selectedStat];
 
-        // Calcular la duración basada en el valor de la estadística (estadística más alta, duración más corta)
-        const duration = (100 / stat) * 2; // 2 segundos para llenar el 100% para el valor de estadística de 100
+        const duration = (100 / stat) * 2;
 
         bar.style.transition = `width ${duration}s linear`;
         bar.style.width = '100%';
 
         setTimeout(() => {
             value.textContent = stat;
+            if (currentPokemon.every(p => document.getElementById(`${p.name}-value`).textContent)) {
+                document.getElementById('next-button').style.display = 'inline-block';
+            }
         }, duration * 1000);
     });
 }
 
-// Función para reiniciar la carrera
+async function nextRound() {
+    if (currentRound < totalRounds) {
+        currentRound++;
+        document.getElementById('next-button').style.display = 'none';
+        await resetRace();
+    } else {
+        window.location.href = 'end.html';
+    }
+}
+
 async function resetRace() {
     currentPokemon = await getRandomPokemon();
     selectedStat = getRandomStat();
     updateSelectedStat();
+    updateRoundIndicator();
     renderPokemon();
 }
 

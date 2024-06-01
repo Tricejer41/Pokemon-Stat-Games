@@ -11,13 +11,14 @@
     <h1>Pokémon Stat Race</h1>
     <div class="stat-header">
         <div id="selected-stat">Stat: Speed</div>
+        <div id="round-indicator">Ronda: 1/5</div>
     </div>
     <div class="pokemon-container" id="pokemon-container">
         <!-- Contenedor para los Pokémon -->
     </div>
     <div class="button-container">
-        <button onclick="startRace()">Start Race</button>
-        <button onclick="resetRace()">Reset</button>
+        <button id="start-button" onclick="startRace()">Start Race</button>
+        <button id="next-button" onclick="nextRound()" style="display:none;">Siguiente</button>
     </div>
 </body>
 </html>
