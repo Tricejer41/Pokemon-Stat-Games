@@ -60,8 +60,8 @@ function updateScore() {
 
 function renderPokemon() {
     const container = document.getElementById('pokemon-container');
-    const firstPrediction = document.getElementById('first-prediction');
-    const lastPrediction = document.getElementById('last-prediction');
+    const firstPrediction = document.getElementById('first-place-prediction');
+    const lastPrediction = document.getElementById('last-place-prediction');
     container.innerHTML = '';
     firstPrediction.innerHTML = '<option value="" disabled selected>Seleccionar Pokémon</option>';
     lastPrediction.innerHTML = '<option value="" disabled selected>Seleccionar Pokémon</option>';
@@ -89,8 +89,8 @@ function renderPokemon() {
 }
 
 function ensureDifferentSelections() {
-    const firstPrediction = document.getElementById('first-prediction');
-    const lastPrediction = document.getElementById('last-prediction');
+    const firstPrediction = document.getElementById('first-place-prediction');
+    const lastPrediction = document.getElementById('last-place-prediction');
     if (firstPrediction.value === lastPrediction.value) {
         alert("El primer y el último Pokémon no pueden ser el mismo.");
         this.value = '';
@@ -98,8 +98,8 @@ function ensureDifferentSelections() {
 }
 
 function startRace() {
-    const firstPrediction = document.getElementById('first-prediction').value;
-    const lastPrediction = document.getElementById('last-prediction').value;
+    const firstPrediction = document.getElementById('first-place-prediction').value;
+    const lastPrediction = document.getElementById('last-place-prediction').value;
 
     if (!firstPrediction || !lastPrediction) {
         alert("Por favor, realiza ambas predicciones antes de iniciar la carrera.");
@@ -128,8 +128,8 @@ function startRace() {
 }
 
 function checkPredictions() {
-    const firstPrediction = document.getElementById('first-prediction').value;
-    const lastPrediction = document.getElementById('last-prediction').value;
+    const firstPrediction = document.getElementById('first-place-prediction').value;
+    const lastPrediction = document.getElementById('last-place-prediction').value;
 
     currentPokemon.sort((a, b) => b.stats[selectedStat] - a.stats[selectedStat]);
 

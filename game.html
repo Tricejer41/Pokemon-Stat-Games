@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Stat Race</title>
     <link rel="stylesheet" href="game.css">
-    <script src="game.js" defer></script>
 </head>
 <body>
-    <h1>Pokémon Stat Race</h1>
-    <div class="stat-header">
-        <div id="selected-stat">Stat: Speed</div>
-        <div id="score">Puntuación: 0</div>
-        <div id="round-indicator">Ronda: 1/5</div>
+    <div class="container">
+        <h1>Pokémon Stat Race</h1>
+        <div class="stat-header">
+            <div id="selected-stat">Stat: Hp</div>
+            <div id="score">Puntuación: 0</div>
+            <div id="round-indicator">Ronda: 1/5</div>
+        </div>
+        <div class="pokemon-container" id="pokemon-container">
+            <!-- Contenedor para los Pokémon -->
+        </div>
+        <div class="predictions">
+            <div>
+                <label for="first-place-prediction">Predicción Primer Lugar:</label>
+                <select id="first-place-prediction">
+                    <option value="" disabled selected>Seleccionar Pokémon</option>
+                </select>
+            </div>
+            <div>
+                <label for="last-place-prediction">Predicción Último Lugar:</label>
+                <select id="last-place-prediction">
+                    <option value="" disabled selected>Seleccionar Pokémon</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="start-button" onclick="startRace()">Start Race</button>
+            <button id="next-button" onclick="nextRound()" style="display: none;">Next Round</button>
+        </div>
     </div>
-    <div class="pokemon-container" id="pokemon-container">
-        <!-- Contenedor para los Pokémon -->
-    </div>
-    <div class="predictions">
-        <label for="first-prediction">Predicción Primer Lugar:</label>
-        <select id="first-prediction">
-            <option value="" disabled selected>Seleccionar Pokémon</option>
-        </select>
-
-        <label for="last-prediction">Predicción Último Lugar:</label>
-        <select id="last-prediction">
-            <option value="" disabled selected>Seleccionar Pokémon</option>
-        </select>
-    </div>
-    <div class="button-container">
-        <button id="start-button" onclick="startRace()">Start Race</button>
-        <button id="next-button" onclick="nextRound()" style="display:none;">Siguiente</button>
-    </div>
+    <script src="game.js"></script>
 </body>
 </html>

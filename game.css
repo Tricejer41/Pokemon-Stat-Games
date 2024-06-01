@@ -1,48 +1,82 @@
 body {
-    background-color: #D9CBBA;
+    background-color: #F2E5D5;
     color: #260101;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    overflow: hidden; /* Para evitar barras laterales */
-    margin: 0; /* Eliminar márgenes del body */
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10px; /* Añadimos margen horizontal */
+}
+.container {
+    background-color: #D9CBBA;
+    border: 5px solid #D98B91;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 40px); /* Ajustamos el margen horizontal */
+    max-width: none; /* Eliminamos el ancho máximo */
+    height: auto; /* Ajustamos la altura del contenedor */
+}
+h1 {
+    color: #400101;
+    margin-bottom: 20px;
 }
 .stat-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ajustamos la justificación para alinearlos */
     align-items: center;
-    width: 80%;
-    margin: 5px auto; /* Reducimos el margen */
+    margin-bottom: 10px;
+}
+#selected-stat, #score, #round-indicator {
+    background-color: #D98B91;
+    padding: 5px; /* Reducimos el padding */
+    border-radius: 10px;
+    color: #F2E5D5;
+    font-weight: bold;
+    width: 15%; /* Ajustamos el ancho del recuadro */
+    text-align: center;
+    font-size: 14px; /* Reducimos el tamaño de la fuente */
+}
+#selected-stat {
+    margin-left: 0; /* Alineamos el recuadro de stat con el principio de las barras */
+}
+#round-indicator {
+    margin-right: 0; /* Alineamos el recuadro de rondas con el final de las barras */
 }
 .pokemon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px auto; /* Reducimos el margen */
-    width: 100%; /* Aumentamos el ancho */
+    margin-bottom: 10px;
 }
 .pokemon {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px 0; /* Reducimos el margen */
-    width: 100%; /* Aumentamos el ancho */
+    margin: 5px 0;
+    width: 100%;
 }
 .pokemon-sprite {
-    width: 80px; /* Aumentamos el tamaño de la imagen */
-    height: 80px; /* Aumentamos el tamaño de la imagen */
-    margin-right: 10px; /* Reducimos el margen */
+    width: 70px; /* Ajustamos el tamaño de la imagen */
+    height: 70px; /* Ajustamos el tamaño de la imagen */
+    margin-right: 10px;
 }
 .stat-bar-container {
     position: relative;
-    width: 50%; /* Reducimos la longitud de las barras */
+    width: 50%; /* Ajustamos la longitud de las barras */
     background-color: #D9A7A4;
     border: 2px solid #D98B91;
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Alineación a la izquierda */
+    border-radius: 10px;
+    overflow: hidden;
 }
 .stat-bar {
-    height: 30px; /* Aumentamos la altura de las barras */
+    height: 25px; /* Ajustamos la altura de las barras */
     width: 0;
     background-color: #F2E5D5;
     transition: width 2s linear;
@@ -53,42 +87,50 @@ body {
     color: #400101;
     font-weight: bold;
 }
-.button-container {
+.predictions {
+    margin: 10px 0;
     display: flex;
-    justify-content: center;
-    margin-top: 5px; /* Reducimos el margen */
+    justify-content: space-around;
+    width: 100%;
+    font-weight: bold; /* Añadimos estilo al texto */
+    color: #400101; /* Añadimos color al texto */
+    align-items: center; /* Alineamos verticalmente */
 }
-button {
-    padding: 5px 10px; /* Reducimos el tamaño del botón */
-    font-size: 14px; /* Reducimos el tamaño de la fuente */
-    margin: 5px; /* Reducimos el margen */
+
+.predictions div {
+    display: flex;
+    align-items: center; /* Asegura que el texto y el select estén alineados verticalmente */
+}
+
+.predictions label {
+    margin-right: 5px; /* Espacio entre la etiqueta y el select */
+}
+
+.predictions select {
+    padding: 5px;
+    font-size: 14px;
     background-color: #F2E5D5;
     border: 2px solid #D98B91;
     color: #260101;
-    cursor: pointer;
+    border-radius: 5px;
 }
-button:hover {
-    background-color: #D98B91;
-    color: #F2E5D5;
-}
-.predictions {
-    margin: 10px auto;
+
+.button-container {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
-}
-.predictions label {
-    margin-right: 10px;
-}
-.predictions select {
-    margin-right: 20px;
-    padding: 5px;
-    font-size: 14px;
-}
-.score-container {
+    justify-content: center;
+    gap: 10px;
     margin-top: 10px;
 }
-#score {
-    font-size: 18px;
-    font-weight: bold;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #D98B91;
+    border: none;
+    border-radius: 10px;
+    color: #F2E5D5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #400101;
 }
