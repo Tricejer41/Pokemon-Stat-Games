@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Stats Higher or Lower</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pokémon Stats Higher or Lower</h1>
+        <div class="description">
+            <p>Adivina si el siguiente Pokémon tiene una estadística mayor, igual o menor.</p>
+        </div>
+        <div id="game-container">
+            <div class="pokemon-card">
+                <div class="pokemon-image-container">
+                    <img id="left-pokemon-img" src="" alt="Pokémon">
+                </div>
+                <p id="left-pokemon-name" class="pokemon-name"></p>
+                <p id="left-pokemon-stat" class="pokemon-stat"></p>
+                <p id="left-pokemon-value" class="pokemon-value"></p>
+            </div>
+            <div class="vs">
+                <p>VS</p>
+            </div>
+            <div class="pokemon-card">
+                <div class="pokemon-image-container">
+                    <img id="right-pokemon-img" src="" alt="Pokémon">
+                </div>
+                <p id="right-pokemon-name" class="pokemon-name"></p>
+                <p id="right-pokemon-stat" class="pokemon-stat"></p>
+                <p id="right-pokemon-value" class="pokemon-value">???</p>
+            </div>
+        </div>
+        <div id="score-container">
+            <p>Puntuación: <span id="score">0</span></p>
+        </div>
+        <div class="buttons">
+            <button onclick="guess('higher')">Higher</button>
+            <button onclick="guess('same')">Same</button>
+            <button onclick="guess('lower')">Lower</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
